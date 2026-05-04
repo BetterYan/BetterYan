@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件工程师 | 制造业技术专家</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <title>Software Engineer | Manufacturing Tech Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #2563eb;
@@ -26,7 +26,7 @@
         }
 
         body {
-            font-family: 'Noto Sans SC', sans-serif;
+            font-family: 'Noto Sans SC', 'Inter', sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.7;
@@ -55,6 +55,12 @@
             color: var(--primary);
         }
 
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
         .nav-links {
             display: flex;
             gap: 2rem;
@@ -70,6 +76,37 @@
 
         .nav-links a:hover {
             color: var(--primary);
+        }
+
+        /* 语言切换 */
+        .lang-switch {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            padding: 0.25rem;
+            border-radius: 8px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .lang-btn {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--text-primary);
         }
 
         /* 英雄区 */
@@ -367,6 +404,10 @@
                 gap: 2rem;
             }
 
+            .nav-center {
+                gap: 1rem;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -379,37 +420,67 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* 隐藏/显示双语 */
+        [data-lang="en"] { display: none; }
+        body.en [data-lang="zh"] { display: none; }
+        body.en [data-lang="en"] { display: block; }
+        body.en .hero-stats .stat-label { display: none; }
+        body.en .hero-stats .stat-label-en { display: block; }
+        body.en .hero-stats .stat-label { display: none; }
+        body:not(.en) .stat-label-en { display: none; }
+        body.en .skill-card p[data-lang] { display: none; }
+        body.en .skill-card p[data-lang="en"] { display: block; }
+        body.en .skill-card p[data-lang="zh"] { display: none; }
+        body:not(.en) .skill-card p[data-lang="en"] { display: none; }
+        body.en .project-desc[data-lang] { display: none; }
+        body.en .project-desc[data-lang="en"] { display: block; }
+        body.en .project-desc[data-lang="zh"] { display: none; }
+        body:not(.en) .project-desc[data-lang="en"] { display: none; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-logo">&lt;Dev /&gt;</div>
-        <ul class="nav-links">
-            <li><a href="#skills">技术栈</a></li>
-            <li><a href="#projects">项目</a></li>
-            <li><a href="#about">关于</a></li>
-        </ul>
+        <div class="nav-center">
+            <ul class="nav-links">
+                <li><a href="#skills" data-lang="zh">技术栈</a><a href="#skills" data-lang="en">Skills</a></li>
+                <li><a href="#projects" data-lang="zh">项目</a><a href="#projects" data-lang="en">Projects</a></li>
+                <li><a href="#about" data-lang="zh">关于</a><a href="#about" data-lang="en">About</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="setLang('zh')">中文</button>
+                <button class="lang-btn" onclick="setLang('en')">EN</button>
+            </div>
+        </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">制造业 · 软件工程师</div>
-            <h1>深耕技术 · 匠心不改</h1>
-            <p class="hero-subtitle">专注工业自动化与信息化系统开发</p>
-            <p class="hero-tagline">年过四旬，代码依旧是我最热爱的事</p>
+            <div class="hero-badge" data-lang="zh">制造业 · 软件工程师</div>
+            <div class="hero-badge" data-lang="en">Manufacturing · Software Engineer</div>
+            <h1 data-lang="zh">深耕技术 · 匠心不改</h1>
+            <h1 data-lang="en">Dedicated Tech · Passion Unchanged</h1>
+            <p class="hero-subtitle" data-lang="zh">专注工业自动化与信息化系统开发</p>
+            <p class="hero-subtitle" data-lang="en">Focus on Industrial Automation & Information Systems</p>
+            <p class="hero-tagline" data-lang="zh">年过四旬，代码依旧是我最热爱的事</p>
+            <p class="hero-tagline" data-lang="en">Over 40, and code is still what I love most</p>
 
             <div class="hero-stats">
                 <div class="stat-item">
                     <div class="stat-number">4+</div>
-                    <div class="stat-label">编程语言</div>
+                    <div class="stat-label" data-lang="zh">编程语言</div>
+                    <div class="stat-label" data-lang="en">Languages</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">10+</div>
-                    <div class="stat-label">行业深耕(年)</div>
+                    <div class="stat-label" data-lang="zh">行业深耕(年)</div>
+                    <div class="stat-label" data-lang="en">Years in Industry</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number">∞</div>
-                    <div class="stat-label">热爱</div>
+                    <div class="stat-label" data-lang="zh">热爱</div>
+                    <div class="stat-label" data-lang="en">Passion</div>
                 </div>
             </div>
         </div>
@@ -417,74 +488,93 @@
 
     <section class="section" id="skills">
         <div class="section-header">
-            <h2>技术栈</h2>
-            <p>工控与互联网开发的跨界融合</p>
+            <h2 data-lang="zh">技术栈</h2>
+            <h2 data-lang="en">Tech Stack</h2>
+            <p data-lang="zh">工控与互联网开发的跨界融合</p>
+            <p data-lang="en">Cross-Domain: Industrial Control & Web Development</p>
         </div>
 
         <div class="skills-grid">
             <div class="skill-card">
                 <div class="skill-icon">C#</div>
                 <h3>C# / .NET</h3>
-                <p>桌面应用开发主力语言，用于工控测试软件和 Windows 平台工具开发</p>
+                <p data-lang="zh">桌面应用开发主力语言，用于工控测试软件和 Windows 平台工具开发</p>
+                <p data-lang="en">Primary language for desktop apps, industrial testing software, and Windows tools</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">JS</div>
                 <h3>JavaScript / TS</h3>
-                <p>前端开发核心，前后端分离架构，Vue/React 框架应用</p>
+                <p data-lang="zh">前端开发核心，前后端分离架构，Vue/React 框架应用</p>
+                <p data-lang="en">Frontend core, SPA architecture, Vue/React framework applications</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">Py</div>
                 <h3>Python</h3>
-                <p>数据分析与自动化，处理生产数据、报表生成、脚本工具</p>
+                <p data-lang="zh">数据分析与自动化，处理生产数据、报表生成、脚本工具</p>
+                <p data-lang="en">Data analysis & automation, production data processing, reporting & scripting</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">LV</div>
                 <h3>LabVIEW</h3>
-                <p>工业自动化测试系统开发，设备通讯与数据采集</p>
+                <p data-lang="zh">工业自动化测试系统开发，设备通讯与数据采集</p>
+                <p data-lang="en">Industrial automation testing systems, device communication & data acquisition</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">Az</div>
                 <h3>Azure</h3>
-                <p>云服务部署与运维，公司官网及业务系统托管</p>
+                <p data-lang="zh">云服务部署与运维，公司官网及业务系统托管</p>
+                <p data-lang="en">Cloud deployment & operations, corporate website & business system hosting</p>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">DB</div>
-                <h3>数据库</h3>
-                <p>SQL Server / MySQL / MongoDB，数据建模与优化</p>
+                <h3 data-lang="zh">数据库</h3>
+                <h3 data-lang="en">Databases</h3>
+                <p data-lang="zh">SQL Server / MySQL / MongoDB，数据建模与优化</p>
+                <p data-lang="en">SQL Server / MySQL / MongoDB, data modeling & optimization</p>
             </div>
         </div>
     </section>
 
     <section class="section" id="projects">
         <div class="section-header">
-            <h2>项目成果</h2>
-            <p>从工控到底层到上层的完整技术链条</p>
+            <h2 data-lang="zh">项目成果</h2>
+            <h2 data-lang="en">Projects</h2>
+            <p data-lang="zh">从工控底层到上层的完整技术链条</p>
+            <p data-lang="en">Complete Tech Chain: From Hardware to Cloud</p>
         </div>
 
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-type">工业控制</div>
-                    <h3>工控测试软件系统</h3>
+                    <div class="project-type" data-lang="zh">工业控制</div>
+                    <div class="project-type" data-lang="en">Industrial Control</div>
+                    <h3 data-lang="zh">工控测试软件系统</h3>
+                    <h3 data-lang="en">Industrial Testing Software</h3>
                 </div>
                 <div class="project-body">
-                    <p class="project-desc">为生产线开发的自动化测试系统，实现设备校准、数据采集与测试报告自动生成。提升测试效率，减少人工干预。</p>
+                    <p class="project-desc" data-lang="zh">为生产线开发的自动化测试系统，实现设备校准、数据采集与测试报告自动生成。提升测试效率，减少人工干预。</p>
+                    <p class="project-desc" data-lang="en">Automated testing system for production lines, achieving equipment calibration, data acquisition, and automatic report generation. Improved testing efficiency and reduced manual intervention.</p>
                     <div class="project-tags">
                         <span class="tag">C#</span>
                         <span class="tag">LabVIEW</span>
-                        <span class="tag">串口通讯</span>
-                        <span class="tag">数据采集</span>
+                        <span class="tag" data-lang="zh">串口通讯</span>
+                        <span class="tag" data-lang="en">Serial Comm</span>
+                        <span class="tag" data-lang="zh">数据采集</span>
+                        <span class="tag" data-lang="en">DAQ</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-type">企业信息化</div>
-                    <h3>内部流程管理平台</h3>
+                    <div class="project-type" data-lang="zh">企业信息化</div>
+                    <div class="project-type" data-lang="en">Enterprise IT</div>
+                    <h3 data-lang="zh">内部流程管理平台</h3>
+                    <h3 data-lang="en">Internal Process Management</h3>
                 </div>
                 <div class="project-body">
-                    <p class="project-desc">公司内部审批流程、工单管理、权限控制的 Web 平台，优化业务流程，提升运营效率。</p>
+                    <p class="project-desc" data-lang="zh">公司内部审批流程、工单管理、权限控制的 Web 平台，优化业务流程，提升运营效率。</p>
+                    <p class="project-desc" data-lang="en">Internal web platform for approval workflows, task management, and access control. Optimized business processes and improved operational efficiency.</p>
                     <div class="project-tags">
                         <span class="tag">JavaScript</span>
                         <span class="tag">.NET Core</span>
@@ -496,32 +586,42 @@
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-type">数据分析</div>
-                    <h3>生产数据分析平台</h3>
+                    <div class="project-type" data-lang="zh">数据分析</div>
+                    <div class="project-type" data-lang="en">Data Analytics</div>
+                    <h3 data-lang="zh">生产数据分析平台</h3>
+                    <h3 data-lang="en">Production Data Analytics</h3>
                 </div>
                 <div class="project-body">
-                    <p class="project-desc">对接产线数据库，实现实时监控、趋势分析、异常预警的 dashboard，支持管理层决策。</p>
+                    <p class="project-desc" data-lang="zh">对接产线数据库，实现实时监控、趋势分析、异常预警的 dashboard，支持管理层决策。</p>
+                    <p class="project-desc" data-lang="en">Connected to production databases, providing real-time monitoring, trend analysis, and anomaly alerts dashboard to support management decisions.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
                         <span class="tag">Pandas</span>
                         <span class="tag">ECharts</span>
-                        <span class="tag">数据分析</span>
+                        <span class="tag" data-lang="zh">数据分析</span>
+                        <span class="tag" data-lang="en">Analytics</span>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-header">
-                    <div class="project-type">云服务</div>
-                    <h3>公司官网 (Azure)</h3>
+                    <div class="project-type" data-lang="zh">云原生 · 微服务</div>
+                    <div class="project-type" data-lang="en">Cloud-Native · Microservices</div>
+                    <h3 data-lang="zh">全球官网平台 (Azure)</h3>
+                    <h3 data-lang="en">Global Corporate Website (Azure)</h3>
                 </div>
                 <div class="project-body">
-                    <p class="project-desc">基于 Azure App Service 部署的官网，支持多语言、内容管理，CDN 加速全球访问。</p>
+                    <p class="project-desc" data-lang="zh">基于 Azure 微服务架构的全球官网平台，采用 App Service + Container Apps，前端 CDN 全球加速，支持多区域部署与高可用。</p>
+                    <p class="project-desc" data-lang="en">Azure microservices-based global corporate website, built with App Service & Container Apps, front-end CDN global acceleration, multi-region deployment with high availability.</p>
                     <div class="project-tags">
                         <span class="tag">Azure</span>
-                        <span class="tag">Static Site</span>
+                        <span class="tag">App Service</span>
+                        <span class="tag">Container Apps</span>
+                        <span class="tag" data-lang="zh">微服务</span>
+                        <span class="tag" data-lang="en">Microservices</span>
                         <span class="tag">CDN</span>
-                        <span class="tag">HTTPS</span>
+                        <span class="tag">Multi-Region</span>
                     </div>
                 </div>
             </div>
@@ -530,19 +630,53 @@
 
     <section class="section" id="about">
         <div class="about-section">
-            <p class="about-quote">代码不只是谋生的工具，更是创造价值的艺术</p>
+            <p class="about-quote" data-lang="zh">代码不只是谋生的工具，更是创造价值的艺术</p>
+            <p class="about-quote" data-lang="en">Code is not just a tool for living, but an art for creating value</p>
             <div class="about-content">
-                <p>在制造业深耕十余年，从工控测试到信息化系统，完整经历了软件开发的各个层面。</p>
-                <p style="margin-top: 1rem;">C# 写工控软件、JavaScript 做网站、Python 处理数据、LabVIEW 对接设备——技术栈或许不是最新的，但解决实际问题的能力是扎实的。</p>
+                <p data-lang="zh">在制造业深耕十余年，从工控测试到信息化系统，完整经历了软件开发的各个层面。</p>
+                <p data-lang="en">Over a decade in manufacturing, from industrial testing to information systems, experienced all levels of software development.</p>
+                <p data-lang="zh" style="margin-top: 1rem;">C# 写工控软件、JavaScript 做网站、Python 处理数据、LabVIEW 对接设备——技术栈或许不是最新的，但解决实际问题的能力是扎实的。</p>
+                <p data-lang="en" style="margin-top: 1rem;">C# for industrial software, JavaScript for websites, Python for data, LabVIEW for device integration — the tech stack may not be the newest, but the ability to solve real problems is solid.</p>
             </div>
             <div class="about-highlight">
-                <span>40+</span> 岁，不是终点，是新的起点
+                <span>40+</span> <span data-lang="zh">岁，不是终点，是新的起点</span><span data-lang="en">years old — not the end, but a new beginning</span>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>以技术为笔，以代码为墨，书写制造业数字化的每一页</p>
+        <p data-lang="zh">以技术为笔，以代码为墨，书写制造业数字化的每一页</p>
+        <p data-lang="en">With technology as the pen and code as the ink, writing every page of manufacturing digitalization</p>
     </footer>
+
+    <script>
+        function setLang(lang) {
+            const body = document.body;
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            if (lang === 'en') {
+                body.classList.add('en');
+                document.documentElement.lang = 'en';
+                document.title = 'Software Engineer | Manufacturing Tech Expert';
+            } else {
+                body.classList.remove('en');
+                document.documentElement.lang = 'zh-CN';
+                document.title = '软件工程师 | 制造业技术专家';
+            }
+            
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+            });
+
+            // 保存语言选择
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // 页面加载时恢复语言选择
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLang') || 'zh';
+            setLang(savedLang);
+        });
+    </script>
 </body>
 </html>
