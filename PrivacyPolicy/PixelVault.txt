@@ -1,0 +1,36 @@
+Thank you for using our Photo Encryption & Decryption application (hereinafter referred to as "the App"). We value your privacy and are committed to protecting your personal information. This Privacy Policy is designed to clearly explain how we handle (or do not handle) your information.
+1. Operator Information
+App Name:​ PixelVault
+Developer/Operator:​ Zucky
+Contact:Wren_zhuang@qq.com
+2. Our Privacy Commitment
+This App is a photo encryption/decryption tool​ that operates entirely locally on your device. The core principle behind its design is zero data collection. This means:
+All encryption and decryption processes occur locally on your device.
+We do not have any servers to store or process your photos, videos, or any related data.
+Your photos and files never leave your device and are not uploaded to our servers or any third-party servers.
+3. Information We Collect
+We explicitly state that this App does NOT collect, store, transmit, or share any user personal information or usage data.​ Specifically, we do not collect:
+Personally Identifiable Information:​ Such as name, email address, phone number, etc.
+Device & Identification Information:​ Such as device ID, advertising ID, IP address, location data, etc.
+Photo & Media Content:​ The original photos you select for encryption/decryption, the resulting encrypted files, and their metadata (e.g., EXIF data).
+Usage Data:​ Such as in-app action logs, access logs, feature usage frequency, etc.
+Encryption Keys & Passwords:​ The passwords or keys you use for encryption/decryption are generated and used solely locally on your device. We have no access to them.
+4. Permissions
+This App requests only the necessary permission to access your device's Photo Library/Media Storage. This permission is used exclusively​ to allow you to select photos for encryption and to save decrypted photos back to your device. It is not used for any data collection or upload purposes.
+5. Data Security
+Since we do not collect any data, there is no risk of your data being compromised through a breach of our servers. The security of your data depends entirely on your device's local security measures and your safeguarding of the encryption password.
+Important Note:​ Please keep your encryption password safe. If you lose the password, we cannot​ help you recover it, as all encryption processes are performed locally on your device, and we have no access to your keys or encrypted files.
+6. Third-Party Services
+This App does NOT integrate​ any third-party services, such as:
+Advertising services (e.g., AdMob)
+Analytics services (e.g., Google Analytics for Firebase)
+Crash reporting services (e.g., Firebase Crashlytics)
+Cloud storage services
+Therefore, there is no possibility of data sharing with third parties.
+7. Children's Privacy
+This App is not directed at children under the age of 13 (or the relevant age in your jurisdiction). As we do not collect any information, we do not knowingly collect personal information from children.
+8. Changes to This Privacy Policy
+We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically for any changes.
+9. Contact Us
+If you have any questions about this Privacy Policy or the App's data practices, please contact us at:
+Wren_zhuang@qq.com
