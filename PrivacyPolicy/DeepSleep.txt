@@ -1,0 +1,36 @@
+Thank you for using DeepSleep (hereinafter referred to as “the App”). Your privacy is important to us. This Privacy Policy explains how we handle (or do not handle) your information when you use the App.
+1. Operator Information
+App Name:​ DeepSleep
+Developer/Operator:​ Zucky
+Contact:​ Wren_zhuang@qq.com
+2. Our Privacy Commitment
+DeepSleep is a sleep‑aid application that plays soothing sounds to help you fall asleep. It is designed with a zero‑data‑collection​ philosophy:
+All sound files are pre‑loaded within the App and played locally on your device.
+The App does not​ record, store, or transmit any audio from your environment.
+No user data, including sleep patterns, preferences, or personal information, leaves your device.
+We operate no servers​ to collect or process your data.
+3. Information We Collect
+We explicitly state that this App does NOT collect, store, transmit, or share​ any personal information or usage data. Specifically, we do not​ collect:
+Personally Identifiable Information:​ name, email address, phone number, etc.
+Device & Identification Information:​ device ID, advertising ID, IP address, location data, etc.
+Audio Recordings:​ the App does not use the microphone; it only plays pre‑installed sounds.
+Usage Data:​ in‑app actions, session duration, feature usage frequency, etc.
+Preferences or Settings:​ any volume, timer, or sound selections you make remain only on your device.
+4. Permissions
+The App requires no special permissions​ (such as microphone, camera, or location). It only uses your device’s built‑in speaker or headphone output to play audio. No network or storage access is needed for normal operation.
+5. Data Security
+Because we collect no data, there is no risk of your information being exposed through a server breach. Your privacy is fully protected by your device’s own security measures. You are in complete control of your experience.
+6. Third‑Party Services
+This App does not integrate​ any third‑party services, including but not limited to:
+Advertising networks (e.g., AdMob)
+Analytics tools (e.g., Google Analytics, Firebase)
+Crash reporting systems (e.g., Crashlytics)
+Cloud storage or backup services
+No data is shared with any third party.
+7. Children’s Privacy
+This App is not intended for children under the age of 13 (or the relevant age in your jurisdiction). Since we do not collect any information, we do not knowingly collect personal data from children.
+8. Changes to This Privacy Policy
+We may update this Privacy Policy occasionally. Any changes will be posted on this page with an updated “Last Updated” date. We encourage you to review this policy periodically.
+9. Contact Us
+If you have any questions about this Privacy Policy or the App’s data practices, please contact us at:
+Wren_zhuang@qq.com
